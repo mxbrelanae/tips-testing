@@ -19,7 +19,6 @@ function submitServerInfo(evt) {
     allServers['server' + serverId] = { serverName };
 
     updateServerTable();
-
     serverNameInput.value = '';
   }
 }
