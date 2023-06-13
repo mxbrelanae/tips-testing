@@ -13,8 +13,6 @@ describe("Servers test (with setup and tear-down)", function() {
       expect(allPayments['payment1'].tipPercent).toEqual(20); 
      });
   
-  
-  
     it('should update the #paymentTable on appendPaymentTable()', function () {
       let currentPayment = createCurPayment();
       allPayments['payment1'] = currentPayment;
@@ -47,11 +45,10 @@ describe("Servers test (with setup and tear-down)", function() {
       expect(createCurPayment()).toEqual(expPayment);
     });
   
-    it('should not create payment with empty input on createCurPayment()', function () {
+    it('should not create payment that is empty on createCurPayment()', function () {
       billAmtInput.value = '';
       tipAmtInput.value = '';
       let currentPayment = createCurPayment();
-  
       expect(currentPayment).toEqual(0);
     });
   
@@ -64,8 +61,9 @@ describe("Servers test (with setup and tear-down)", function() {
       summaryTds[1].innerHTML = '';
       summaryTds[2].innerHTML = '';
       serverTbody.innerHTML = '';
-      paymentId = 0;
       allPayments = {};
+      paymentId = 0;
+      
     });
   });
   

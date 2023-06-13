@@ -12,7 +12,6 @@ describe("Utilities test (with setup and tear-down)", function() {
       tipAmtInput.value =100;
   
       submitPaymentInfo();
-  
       expect(sumPaymentTotal('billAmt')).toEqual(1000);
     });
     
@@ -23,7 +22,6 @@ describe("Utilities test (with setup and tear-down)", function() {
       tipAmtInput.value = 13;
   
       submitPaymentInfo();
-  
       expect(sumPaymentTotal('tipAmt')).toEqual(13);
     });
   
@@ -34,7 +32,6 @@ describe("Utilities test (with setup and tear-down)", function() {
       tipAmtInput.value = 17;
   
       submitPaymentInfo();
-  
       expect(sumPaymentTotal('tipPercent')).toEqual(20);
     });
   
@@ -45,22 +42,18 @@ describe("Utilities test (with setup and tear-down)", function() {
   
     it('should make new td and append to tr on appendTd(tr, value)', function () {
       let newTr = document.createElement('tr');
-  
       appendTd(newTr, 'new');
-  
       expect(newTr.children.length).toEqual(1);
       expect(newTr.firstChild.innerHTML).toEqual('new');
     });
   
     it('should delete td and append to tr on appendDeleteBtn(tr, type)', function () {
       let newTr = document.createElement('tr');
-  
       appendDeleteBtn(newTr);
-  
       expect(newTr.children.length).toEqual(1);
-      expect(newTr.firstChild.innerHTML).toEqual('');
+      expect(newTr.firstChild.innerHTML).toEqual('X');
     });
-  
+
     afterEach(function() {
       billAmtInput.value = '';
       tipAmtInput.value = '';
